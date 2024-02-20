@@ -1,15 +1,17 @@
 <h1>Our tasks</h1>
-<ul>
+<ul class="list">
   <% @tasks.each do |task| %>
     <li>
-      <%= link_to task.title, task_path(task) %>
+      <%= link_to task.title, task_path(task), class: "list-item" %>
       <% if task.completed == true %>
         ✅
       <% else%>
         ❌
       <%end%>
-      <%= link_to "🗑️", delete_task_path(task), data: {turbo_method: :delete} %>
+      <%= link_to "🗑️", task_path(task), data: {turbo_method: :delete} %>
     </li>
   <%end%>
 </ul>
-<%= link_to "Add a new task", new_path %>
+<button type="button" class="btn btn-primary">
+<%= link_to "Add a new task", new_task_path, class: "add" %>
+</button>

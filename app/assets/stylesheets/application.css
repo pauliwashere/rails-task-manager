@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+.add {
+  color: white !important;
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+.list-item {
+  text-decoration: none;
+}
+
+.list-item:hover {
+  color: lightblue;
+}
